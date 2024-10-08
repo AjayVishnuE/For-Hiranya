@@ -6,7 +6,6 @@
     }],
     "routes": [
         {
-            "handle": "filesystem",
             "src": "/(.*)",
             "dest": "hiranya/wsgi.py"
         }
