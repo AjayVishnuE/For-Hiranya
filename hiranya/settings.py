@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-75qn_ec@7anoa3&k)d$nv%@_a+w002yqkt+6a#y52*#*)6vl80
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.file'
-SESSION_FILE_PATH = '/tmp/sessions'  # Or any writable path
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
 
 # Application definition
 
