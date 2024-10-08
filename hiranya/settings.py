@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-75qn_ec@7anoa3&k)d$nv%@_a+w002yqkt+6a#y52*#*)6vl80
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
+SESSION_FILE_PATH = '/tmp/sessions'  # Or any writable path
 
 # Application definition
 
@@ -78,8 +78,9 @@ WSGI_APPLICATION = 'hiranya.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': None,
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

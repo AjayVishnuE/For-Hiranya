@@ -6,7 +6,9 @@ from reportlab.lib.units import cm
 from django.http import HttpResponse
 from reportlab.lib.pagesizes import A4
 from django.shortcuts import render, redirect
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Spacer
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Spacer, Paragraph
+
 
 def upload_file(request):
     if request.method == 'POST':
@@ -106,16 +108,21 @@ def convert_to_pdf(request):
     # Calculate fixed column width and row height
     column_width = (21.0 - 2 * 0.3) / 5 * cm  # 4.08 cm width per column
     row_height = (29.0 - 2 * 0.3) / 10 * cm  # 2.91 cm height per row
-
+ 
+    styles = getSampleStyleSheet()
+    style_normal = styles['Normal']
+ 
     for row in df_data:
         # Extract the Name, Address, and Pin
         name = row.get('Name', '')
         address = row.get('Address', '')
         pin = row.get('Pin', '')
 
+        name_paragraph = Paragraph(name, style_normal)
+        address_paragraph = Paragraph(address, style_normal)
+        pin_paragraph = Paragraph(pin, style_normal)
         # Format the data as "Name, Address, Pin" in vertical format
-        entry = f"{name}\n{address}\n{pin}"
-
+        entry = [name_paragraph, address_paragraph, pin_paragraph]
         # Add this entry to the current row (which will have 5 columns of data)
         page_rows.append(entry)
 
@@ -138,6 +145,7 @@ def convert_to_pdf(request):
                 ('LEFTPADDING', (0, 0), (-1, -1), 15),
                 ('RIGHTPADDING', (0, 0), (-1, -1), 5),
                 ('TOPPADDING', (0, 0), (-1, -1), 10),
+                ('WORDWRAP', (0, 0), (-1, -1)),
             ]))
             elements.append(table)
             data = []  # Reset data for the next page
@@ -166,6 +174,7 @@ def convert_to_pdf(request):
             ('LEFTPADDING', (0, 0), (-1, -1), 15),
             ('RIGHTPADDING', (0, 0), (-1, -1), 5),
             ('TOPPADDING', (0, 0), (-1, -1), 10),
+            ('WORDWRAP', (0, 0), (-1, -1)),
         ]))
         elements.append(table)
 
