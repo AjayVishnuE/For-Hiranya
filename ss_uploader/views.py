@@ -1,13 +1,13 @@
-import pandas as pd
+import pandas as pd                                                                             # type: ignore
 from io import BytesIO
-from reportlab.lib import colors
+from reportlab.lib import colors                                                                # type: ignore
 from .forms import UploadFileForm
-from reportlab.lib.units import cm
+from reportlab.lib.units import cm                                                              # type: ignore
 from django.http import HttpResponse
-from reportlab.lib.pagesizes import A4
-from django.shortcuts import render, redirect
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Spacer, Paragraph
+from reportlab.lib.pagesizes import A4                                                          # type: ignore
+from django.shortcuts import render, redirect                                                   # type: ignore
+from reportlab.lib.styles import getSampleStyleSheet                                            # type: ignore
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Spacer, Paragraph          # type: ignore
 
 
 def upload_file(request):
