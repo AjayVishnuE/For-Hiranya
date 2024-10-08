@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display-Data</title>
+    <link rel="stylesheet" type="text/css" href="../../static/styles/display_data1.css"/> 
+</head>
+<body class = "display-overall-container">
+    {% load custom_filters %}
+    <h2>Uploaded Data</h2>
+
+    <!-- Search Form -->
+    <form class= "search-and-filter-form" method="get">
+        <input class = "inputfields" type="text" name="name_filter" placeholder="Filter by Name" value="{{ request.GET.name_filter }}">
+        <input class = "inputfields" type="text" name="address_filter" placeholder="Filter by Address" value="{{ request.GET.address_filter }}">
+        <input class = "inputfields" type="text" name="pin_filter" placeholder="Filter by Pin" value="{{ request.GET.pin_filter }}">
+        <br/>
+        <button class="search_filter_btn" type="submit">Search & Filter</button>
+    </form>
+
+    <div class="sorting-buttons-container">
+        <form method="get">
+            <input type="hidden" name="sort_by" value="name_pin">
+            <button class="sorting-btns" class="sort-btn" type="submit">Sort by Name, then Pin</button>
+        </form>
+        <form method="get">
+            <input type="hidden" name="sort_by" value="pin_name">
+            <button class="sorting-btns" class="sort-btn" type="submit">Sort by Pin, then Name</button>
+        </form>
+    </div>
+
+    <!-- Sorting Links -->
+    <table border="1">
+        <thead>
+            <tr>
+                {% for column in columns %}
+                <th>
+                    <!-- <a href="?sort_by={{ column }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}{% if request.GET.name_filter %}&name_filter={{ request.GET.name_filter }}{% endif %}{% if request.GET.address_filter %}&address_filter={{ request.GET.address_filter }}{% endif %}{% if request.GET.pin_filter %}&pin_filter={{ request.GET.pin_filter }}{% endif %}"> -->
+                        {{ column }}
+                    <!-- </a> -->
+                </th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        {% load custom_filters %}
+
+        <tbody>
+            {% for row in data %}
+            <tr>
+                {% for column in columns %}
+                <td>{{ row|get:column }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>        
+    </table>
+
+    <!-- PDF Generation Button -->
+    <div class="bottom-btn-container">
+        <form method="post" action="{% url 'convert_to_pdf' %}">
+            {% csrf_token %}
+            <button class ="bottom-btns" type="submit">Convert to PDF</button>
+        </form>
+        <form method="post" action="{% url 'clear_file' %}">
+            {% csrf_token %}
+            <button class ="bottom-btns" type="submit">Clear and Upload New File</button>
+        </form>
+    </div>
+
+</body>
+</html>
