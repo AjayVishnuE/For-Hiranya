@@ -1,0 +1,26 @@
+NAME,ADDRESS,LOCATION,PLACE,POST,DISTRICT,PIN,PHONE,STATE,RMS,FROM DATE,DURATION(M),CLOSING DATE,STATUS,INTRODUCER NAME,INTRODUCER VEDAVAHINI,INTRODUCER PHONE NO.,PAYMENT MODE
+Alice Johnson,Address 90,Location 13,Place 39,Post 9,District 8,229918,9204689794,State A,RMS 1,28-08-2022,49,24-04-2028,Inactive,Frank White,Vedavahini 2,9687756189,Credit Card
+John Doe,Address 62,Location 6,Place 23,Post 8,District 4,130339,6517276484,State B,RMS 2,27-11-2024,51,09-04-2021,Inactive,Noah Garcia,Vedavahini 2,6254463553,Net Banking
+John Doe,Address 54,Location 11,Place 21,Post 3,District 4,295950,6030154063,State A,RMS 2,15-06-2023,16,25-04-2026,Active,Kelly Miller,Vedavahini 3,6083421780,Debit Card
+John Doe,Address 18,Location 19,Place 9,Post 1,District 4,578790,8327377142,State D,RMS 2,15-03-2023,54,12-06-2021,Inactive,Quinn Lewis,Vedavahini 4,7809107808,Credit Card
+Alice Johnson,Address 40,Location 14,Place 40,Post 3,District 3,768110,7334883068,State D,RMS 2,26-11-2022,41,19-05-2027,Inactive,Charlie Davis,Vedavahini 1,6576858740,Debit Card
+John Doe,Address 56,Location 7,Place 34,Post 3,District 7,854489,6850746386,State E,RMS 2,09-08-2021,29,26-07-2020,Inactive,Mia Martinez,Vedavahini 5,7316687032,Credit Card
+Alice Johnson,Address 68,Location 9,Place 42,Post 10,District 4,102483,7443265569,State D,RMS 3,30-10-2023,53,30-07-2028,Active,Noah Garcia,Vedavahini 4,9610143487,Credit Card
+John Doe,Address 46,Location 5,Place 34,Post 3,District 4,480105,7131885241,State C,RMS 3,03-09-2027,9,07-11-2023,Active,Rachel Clark,Vedavahini 5,6761219805,Net Banking
+John Doe,Address 56,Location 12,Place 3,Post 10,District 10,531199,8235780705,State E,RMS 3,05-10-2022,4,15-07-2022,Pending,John Doe,Vedavahini 4,9032252722,Credit Card
+Alice Johnson,Address 41,Location 1,Place 50,Post 3,District 1,565539,7268662572,State C,RMS 3,23-03-2020,48,15-12-2027,Inactive,Paul Harris,Vedavahini 1,8530743419,Cash
+John Doe,Address 17,Location 12,Place 50,Post 2,District 5,572765,7531865393,State C,RMS 3,06-09-2021,51,30-11-2024,Active,Rachel Clark,Vedavahini 1,7169579004,Credit Card
+Alice Johnson,Address 23,Location 5,Place 34,Post 3,District 1,603363,7689693593,State A,RMS 3,23-11-2021,3,07-12-2023,Pending,Rachel Clark,Vedavahini 3,9692858326,Net Banking
+Alice Johnson,Address 94,Location 16,Place 25,Post 9,District 6,840316,8891692322,State A,RMS 3,30-09-2023,45,19-01-2020,Active,Frank White,Vedavahini 3,6109803998,Cash
+Alice Johnson,Address 27,Location 10,Place 24,Post 10,District 8,863978,6753151053,State E,RMS 3,05-04-2023,33,20-07-2025,Active,Olivia Anderson,Vedavahini 3,6909217343,Net Banking
+Alice Johnson,Address 99,Location 8,Place 1,Post 8,District 10,906550,9706538252,State D,RMS 3,26-12-2023,20,09-08-2025,Active,Kelly Miller,Vedavahini 5,7630981372,Debit Card
+John Doe,Address 66,Location 1,Place 24,Post 6,District 7,276980,7817393048,State E,RMS 4,03-07-2020,56,25-06-2024,Pending,Quinn Lewis,Vedavahini 5,7564908863,Debit Card
+Alice Johnson,Address 17,Location 9,Place 45,Post 2,District 10,565987,7810159686,State C,RMS 4,09-07-2024,11,19-06-2024,Inactive,Mia Martinez,Vedavahini 5,6584216503,Debit Card
+Alice Johnson,Address 62,Location 19,Place 4,Post 10,District 2,606088,7742774099,State C,RMS 4,19-02-2025,23,18-06-2023,Pending,Rachel Clark,Vedavahini 2,6666656006,Cash
+Alice Johnson,Address 35,Location 2,Place 6,Post 4,District 5,610872,6857175545,State E,RMS 4,23-09-2024,20,12-12-2024,Active,Hannah Adams,Vedavahini 1,7077038682,Net Banking
+John Doe,Address 74,Location 14,Place 1,Post 7,District 1,644690,9261514469,State D,RMS 4,03-05-2025,48,13-07-2027,Active,Charlie Davis,Vedavahini 2,9317329152,Credit Card
+John Doe,Address 77,Location 6,Place 14,Post 2,District 2,221095,7658902480,State D,RMS 5,16-12-2025,17,01-05-2020,Inactive,Bob Brown,Vedavahini 3,9690870791,Net Banking
+John Doe,Address 88,Location 15,Place 31,Post 7,District 5,512706,8412150354,State B,RMS 5,05-11-2027,10,16-11-2026,Pending,Rachel Clark,Vedavahini 4,6197274738,Net Banking
+John Doe,Address 30,Location 13,Place 37,Post 1,District 7,638731,8270820562,State E,RMS 5,19-07-2028,57,29-09-2026,Pending,Kelly Miller,Vedavahini 5,9578825732,Cash
+John Doe,Address 81,Location 18,Place 1,Post 2,District 8,864536,7445130333,State C,RMS 5,22-03-2028,10,02-02-2020,Inactive,Isaac Scott,Vedavahini 5,7252548079,Credit Card
+Alice Johnson,Address 50,Location 19,Place 21,Post 8,District 5,946863,6178562402,State D,RMS 5,05-10-2026,9,11-02-2023,Inactive,Liam Thompson,Vedavahini 3,9153018984,Credit Card

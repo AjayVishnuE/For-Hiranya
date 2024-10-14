@@ -13,7 +13,7 @@
     <h2>Uploaded Data</h2>
 
     <!-- Search Form -->
-    <form class= "search-and-filter-form" method="get">
+    <form class= "search-and-filter-form" method="get" action="{% url 'upload_file' %}">
         <label for="name_filter">Filter by Name:</label>
         <input class = "inputfields" type="text" id="name_filter" name="name_filter" value="{{ request.GET.name_filter }}">
     
@@ -27,7 +27,7 @@
     </form>
 
     <div class="sorting-buttons-container">
-        <form method="get">
+        <form method="get"  action="{% url 'upload_file' %}">
             <!-- Update the hidden input to sort by RMS, Pin, and Name -->
             <input type="hidden" name="sort_by" value="rms_pin_name">
             <button class="sorting-btns" class="sort-btn" type="submit">Sort by RMS, then Pin, then Name</button>
