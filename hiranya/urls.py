@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ss_uploader import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', views.upload_file, name='upload_file'),
     path('clear/', views.clear_file, name='clear_file'), 
     path('convert_to_pdf/', views.convert_to_pdf, name='convert_to_pdf'), 
-]
+    path('download_expired_customers/', views.download_expired_customers, name='download_expired_customers'),
+
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

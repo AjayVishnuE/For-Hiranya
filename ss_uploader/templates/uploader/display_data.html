@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display-Data</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/display_data1.css' %}"/> 
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/display_data.css' %}"/> 
 </head>
 <body class = "display-overall-container">
     {% load custom_filters %}
@@ -14,23 +14,35 @@
 
     <!-- Search Form -->
     <form class= "search-and-filter-form" method="get">
-        <input class = "inputfields" type="text" name="name_filter" placeholder="Filter by Name" value="{{ request.GET.name_filter }}">
-        <input class = "inputfields" type="text" name="address_filter" placeholder="Filter by Address" value="{{ request.GET.address_filter }}">
-        <input class = "inputfields" type="text" name="pin_filter" placeholder="Filter by Pin" value="{{ request.GET.pin_filter }}">
-        <br/>
-        <button class="search_filter_btn" type="submit">Search & Filter</button>
+        <label for="name_filter">Filter by Name:</label>
+        <input class = "inputfields" type="text" id="name_filter" name="name_filter" value="{{ request.GET.name_filter }}">
+    
+        <label for="rms_filter">Filter by RMS:</label>
+        <input class = "inputfields" type="text" id="rms_filter" name="rms_filter" value="{{ request.GET.rms_filter }}">
+    
+        <label for="pin_filter">Filter by PIN:</label>
+        <input class = "inputfields" type="text" id="pin_filter" name="pin_filter" value="{{ request.GET.pin_filter }}">
+    
+        <button class="search_filter_btn" type="submit">Apply Filters</button>
     </form>
 
     <div class="sorting-buttons-container">
         <form method="get">
-            <input type="hidden" name="sort_by" value="name_pin">
-            <button class="sorting-btns" class="sort-btn" type="submit">Sort by Name, then Pin</button>
+            <!-- Update the hidden input to sort by RMS, Pin, and Name -->
+            <input type="hidden" name="sort_by" value="rms_pin_name">
+            <button class="sorting-btns" class="sort-btn" type="submit">Sort by RMS, then Pin, then Name</button>
+        </form>
+        <form method="post" action="{% url 'download_expired_customers' %}">
+            {% csrf_token %}
+            <button class="sorting-btns" class="sort-btn" type="submit">Generate the expiring customers excel</button>
         </form>
         <form method="get">
-            <input type="hidden" name="sort_by" value="pin_name">
-            <button class="sorting-btns" class="sort-btn" type="submit">Sort by Pin, then Name</button>
+            <!-- Update the hidden input to sort by RMS, Pin, and Name -->
+            <input type="hidden" name="clear_repeat" value="clear_repetitions">
+            <button class="sorting-btns" class="sort-btn" type="submit">Clear Repeating Entries</button>
         </form>
     </div>
+    
 
     <!-- Sorting Links -->
     <table border="1">
@@ -56,7 +68,7 @@
                 {% endfor %}
             </tr>
             {% endfor %}
-        </tbody>        
+        </tbody>              
     </table>
 
     <!-- PDF Generation Button -->

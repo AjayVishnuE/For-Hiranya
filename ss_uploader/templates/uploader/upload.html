@@ -10,10 +10,10 @@
 <body class = "home-overall-container">
     <div class = "home-container">
         <h2>Upload Spreadsheet</h2>
-        <form class = "home-form" method="post" enctype="multipart/form-data">
+        <form class="home-form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button class = "uploadbtn" type="submit">Upload</button>
+            <button class="uploadbtn" type="submit">Upload</button>
         </form>
     </div>
 </body>

@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-75qn_ec@7anoa3&k)d$nv%@_a+w002yqkt+6a#y52*#*)6vl80
 DEBUG = True
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+# SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 
 # Application definition
@@ -110,6 +111,9 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 USE_I18N = True
 
