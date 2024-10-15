@@ -13,7 +13,7 @@
     <h2>Uploaded Data</h2>
 
     <!-- Search Form -->
-    <form class= "search-and-filter-form" method="get" action="{% url 'upload_file' %}">
+    <!-- <form class= "search-and-filter-form" method="get" action="{% url 'upload_file' %}">
         <label for="name_filter">Filter by Name:</label>
         <input class = "inputfields" type="text" id="name_filter" name="name_filter" value="{{ request.GET.name_filter }}">
     
@@ -24,23 +24,24 @@
         <input class = "inputfields" type="text" id="pin_filter" name="pin_filter" value="{{ request.GET.pin_filter }}">
     
         <button class="search_filter_btn" type="submit">Apply Filters</button>
-    </form>
+    </form> -->
 
     <div class="sorting-buttons-container">
-        <form method="get"  action="{% url 'upload_file' %}">
-            <!-- Update the hidden input to sort by RMS, Pin, and Name -->
+        <!-- <form method="get"  action="{% url 'upload_file' %}">
             <input type="hidden" name="sort_by" value="rms_pin_name">
             <button class="sorting-btns" class="sort-btn" type="submit">Sort by RMS, then Pin, then Name</button>
-        </form>
+        </form> -->
         <form method="post" action="{% url 'download_expired_customers' %}">
             {% csrf_token %}
             <button class="sorting-btns" class="sort-btn" type="submit">Generate the expiring customers excel</button>
         </form>
-        <form method="get">
-            <!-- Update the hidden input to sort by RMS, Pin, and Name -->
-            <input type="hidden" name="clear_repeat" value="clear_repetitions">
-            <button class="sorting-btns" class="sort-btn" type="submit">Clear Repeating Entries</button>
+        <form method="GET">
+            <input type="hidden" name="action" value="clear_repetitions_expired">
+            <button class="sorting-btns" type="submit">Clear Repeating & Expired Entries & Sort The Data</button>
         </form>
+        
+        
+        
     </div>
     
 
